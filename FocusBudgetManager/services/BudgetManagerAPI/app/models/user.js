@@ -37,7 +37,7 @@ Schema.pre('save', function (next) {
 });
 
 Schema.methods.comparePassword = function (password, callback) {
-    bcrypt.comapre(password, this.password, (error, mathces) => {
+    bcrypt.compare(password, this.password, (error, mathces) => {
         if (error) return callback(error);
         callback(null, mathces);
     });

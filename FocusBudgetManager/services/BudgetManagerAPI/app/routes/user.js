@@ -3,7 +3,7 @@ const passport = require('passport'),
     models = require('@BudgetManager/app/setup');
 
 module.exports = (app) => {
-    const apo = app.BudgetManagerAPI.app.api.user;
+    const api = app.BudgetManagerAPI.app.api.user;
 
     app.route('/api/v1/setup')
         .post(api.setup(models.User));

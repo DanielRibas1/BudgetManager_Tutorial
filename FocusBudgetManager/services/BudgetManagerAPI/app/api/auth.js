@@ -12,7 +12,7 @@ api.login = (User) => (req, res) => {
             res.status(401).send({ success: false, message: 'Authentication failed. User not found.' });
         else {
             user.comparePassword(req.body.password, (error, matches) => {
-                if (mathces && !error) {
+                if (matches && !error) {
                     const token = jwt.sign({ user }, config.secret);
                     res.json({ success: true, message: 'Token granted', token });
                 } else {

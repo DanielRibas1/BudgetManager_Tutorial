@@ -28,7 +28,7 @@ api.index = (User, BudgetToken) => (req, res) => {
     } else return res.status(403).send({ success: false, message: 'Unauthoraized' });
 }
 
-api.singup = (User) => (req, res) => {
+api.signup = (User) => (req, res) => {
     if (!req.body.username || !req.body.password)
         res.json({ success: false, message: 'Please, pass a username and password.' });
     else {
