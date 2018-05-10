@@ -19,3 +19,5 @@ app.use(cors());
 app.use(passport.initialize());
 
 app.set('budgetsecret', config.secret);
+
+module.exports = app;

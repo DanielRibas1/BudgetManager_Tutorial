@@ -12,7 +12,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>4fe80a5d-a3ac-4344-a608-c90c21f1e64b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>server.js</StartupFile>
+    <StartupFile>services\index.js</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -20,7 +20,7 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
     <NodejsPort>1337</NodejsPort>
-    <StartWebBrowser>true</StartWebBrowser>
+    <StartWebBrowser>True</StartWebBrowser>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -29,9 +29,9 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="server.js" />
     <Compile Include="services\BudgetManagerAPI\api\auth.js" />
     <Compile Include="services\BudgetManagerAPI\app\models\user.js" />
+    <Compile Include="services\BudgetManagerAPI\app\routes\auth.js" />
     <Compile Include="services\BudgetManagerAPI\app\setup\index.js" />
     <Compile Include="services\BudgetManagerAPI\config\app.js" />
     <Compile Include="services\BudgetManagerAPI\config\index.js" />
@@ -50,6 +50,7 @@
     <Folder Include="services\BudgetManagerAPI\" />
     <Folder Include="services\BudgetManagerAPI\app\" />
     <Folder Include="services\BudgetManagerAPI\app\models\" />
+    <Folder Include="services\BudgetManagerAPI\app\routes\" />
     <Folder Include="services\BudgetManagerAPI\app\setup\" />
     <Folder Include="services\BudgetManagerAPI\config\" />
     <Folder Include="services\BudgetManagerAPI\api\" />
