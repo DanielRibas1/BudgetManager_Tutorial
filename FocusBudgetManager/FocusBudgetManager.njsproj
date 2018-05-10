@@ -32,6 +32,7 @@
     <Compile Include="server.js" />
     <Compile Include="services\BudgetManagerAPI\app\models\user.js" />
     <Compile Include="services\BudgetManagerAPI\config\index.js" />
+    <Compile Include="services\BudgetManagerAPI\config\passport.js" />
     <Compile Include="services\BudgetManagerAPI\index.js">
       <SubType>Code</SubType>
     </Compile>
