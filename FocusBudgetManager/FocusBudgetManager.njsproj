@@ -39,6 +39,7 @@
     <Content Include=".gitignore" />
     <Content Include="package.json" />
     <Content Include="README.md" />
+    <Content Include="services\BudgetManagerAPI\config\database.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="services\" />
