@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27428.2043
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "NodeJSBackend", "NodeJS_Backend\NodeJSBackend.njsproj", "{4FE80A5D-A3AC-4344-A608-C90C21F1E64B}"
 EndProject
-Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "VueJSFrontend", "VueJS_Frontend\VueJSFrontend\VueJSFrontend.njsproj", "{25F99690-DF38-4C2B-9B6F-2C938DB98958}"
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "VueJSFrontend", "VueJS_Frontend\VueJSFrontend.njsproj", "{25F99690-DF38-4C2B-9B6F-2C938DB98958}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

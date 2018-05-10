@@ -1,9 +1,0 @@
-{
-  "name": "vue-jsfrontend",
-  "version": "0.0.0",
-  "description": "VueJSFrontend",
-  "main": "server.js",
-  "author": {
-    "name": "D"
-  }
-}
