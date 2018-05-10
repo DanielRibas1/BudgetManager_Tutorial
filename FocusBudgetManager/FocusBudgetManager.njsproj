@@ -31,15 +31,17 @@
   <ItemGroup>
     <Compile Include="server.js" />
     <Compile Include="services\BudgetManagerAPI\app\models\user.js" />
+    <Compile Include="services\BudgetManagerAPI\config\app.js" />
     <Compile Include="services\BudgetManagerAPI\config\index.js" />
     <Compile Include="services\BudgetManagerAPI\config\passport.js" />
     <Compile Include="services\BudgetManagerAPI\index.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="services\index.js" />
     <Content Include=".gitignore" />
     <Content Include="package.json" />
     <Content Include="README.md" />
-    <Content Include="services\BudgetManagerAPI\config\database.js" />
+    <Compile Include="services\BudgetManagerAPI\config\database.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="services\" />

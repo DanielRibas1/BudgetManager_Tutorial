@@ -1,11 +1,32 @@
 {
   "name": "focus-budget-manager",
   "version": "0.0.0",
-  "description": "FocusBudgetManager",
+  "description": "A Vue.js and Node.js Budget Manager application tutorial",
   "main": "server.js",
   "author": {
     "name": "D"
   },
+  "_moduleAliases": {
+    "@root": ".",
+    "@BudgetManager": "./services/BudgetManagerAPI",
+    "@BudgetManagerModels": "./services/BudgetManagerAPI/app/models",
+    "@BudgetManagerAPI": "./services/BudgetManagerAPI/config/app.js",
+    "@config": "./services/BudgetManagerAPI/config/index.js"
+  },
+  "keywords": [
+    "Vue.js",
+    "Vuejs",
+    "Vue",
+    "Node.js",
+    "Nodejs",
+    "Node",
+    "MongoDB",
+    "Mongo",
+    "Express.js",
+    "Expressjs",
+    "Express"
+  ],
+  "homepage": "https://github.com/gdomaradzki/https://github.com/gdomaradzki/focus-budget-manager#readme",
   "dependencies": {
     "bcrypt": "^2.0.1",
     "body-parser": "^1.18.2",
