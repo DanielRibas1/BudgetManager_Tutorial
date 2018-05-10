@@ -29,9 +29,11 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="services\BudgetManagerAPI\api\auth.js" />
+    <Compile Include="services\BudgetManagerAPI\app\api\auth.js" />
+    <Compile Include="services\BudgetManagerAPI\app\api\user.js" />
     <Compile Include="services\BudgetManagerAPI\app\models\user.js" />
     <Compile Include="services\BudgetManagerAPI\app\routes\auth.js" />
+    <Compile Include="services\BudgetManagerAPI\app\routes\user.js" />
     <Compile Include="services\BudgetManagerAPI\app\setup\index.js" />
     <Compile Include="services\BudgetManagerAPI\config\app.js" />
     <Compile Include="services\BudgetManagerAPI\config\index.js" />
@@ -53,7 +55,7 @@
     <Folder Include="services\BudgetManagerAPI\app\routes\" />
     <Folder Include="services\BudgetManagerAPI\app\setup\" />
     <Folder Include="services\BudgetManagerAPI\config\" />
-    <Folder Include="services\BudgetManagerAPI\api\" />
+    <Folder Include="services\BudgetManagerAPI\app\api\" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
