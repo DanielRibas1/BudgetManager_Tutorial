@@ -31,6 +31,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="services\BudgetManagerAPI\app\api\auth.js" />
+    <Compile Include="services\BudgetManagerAPI\app\api\budget.js" />
+    <Compile Include="services\BudgetManagerAPI\app\api\clients.js" />
     <Compile Include="services\BudgetManagerAPI\app\api\user.js" />
     <Compile Include="services\BudgetManagerAPI\app\models\budget.js" />
     <Compile Include="services\BudgetManagerAPI\app\models\client.js" />
