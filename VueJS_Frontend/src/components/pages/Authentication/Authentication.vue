@@ -92,7 +92,6 @@ export default {
 
 <style lang="scss">
   @import "./../../../assets/styles";
-
   .l-auth {
     background-color: $background-color;
     padding: 15px;
@@ -101,7 +100,7 @@ export default {
     max-width: 320px;
     animation: bounceIn 1s forwards ease;
     label, input, .icon {
-      color: #29b6f6 !important
+      color: #29b6f6!important;
     }
     .input-group__details {
       &:before {
