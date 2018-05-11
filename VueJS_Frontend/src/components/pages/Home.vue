@@ -16,35 +16,35 @@
 </template>
 
 <script>
-  import Axios from 'axios'
-  import Authentication from '@/components/pages/Authentication'
-  import BudgetListHeader from './../Budget/BufgetListHeader'
-  import BudgetListBody from './../Budget/BudgetListBody'
+import Axios from 'axios'
+import Authentication from '@/components/pages/Authentication'
+import BudgetListHeader from './../Budget/BudgetListHeader'
+import BudgetListBody from './../Budget/BudgetListBody'
 
-  const BudgetManagerAPI = `http://${window.location.hostname}:3001`
+const BudgetManagerAPI = `http://${window.location.hostname}:3001`
 
-  export default {
-    components: {
-      'budget-list-header': BudgetListHeader,
-      'budget-list-body' : BudgetListBody
-    },
-    data () {
-      return {
-        budgets: []
-      }
-    },
-    mounted () {
-      this.getAllBudgets()
-    },
-    methods: {
-      getAllBudgets () {
-        Axios.get(`${BudgetManagerAPI}/api/v1/budget`, {
-          headers: { 'Authorization': Authentication.getAuthenticationHeader(this) },
-          params: { user_id: this.$cookie.get('user_id') }
-        }).then(({data}) => (this.budgets = data))
-      }
+export default {
+  components: {
+    'budget-list-header': BudgetListHeader,
+    'budget-list-body': BudgetListBody
+  },
+  data () {
+    return {
+      budgets: []
+    }
+  },
+  mounted () {
+    this.getAllBudgets()
+  },
+  methods: {
+    getAllBudgets () {
+      Axios.get(`${BudgetManagerAPI}/api/v1/budget`, {
+        headers: { 'Authorization': Authentication.getAuthenticationHeader(this) },
+        params: { user_id: this.$cookie.get('user_id') }
+      }).then(({data}) => (this.budgets = data))
     }
   }
+}
 </script>
 
 <style lang="scss" scoped>

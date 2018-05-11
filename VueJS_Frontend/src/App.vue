@@ -29,7 +29,8 @@ export default {
       opacity: .3;
       z-index: -1;
     }
-    .application {
+
+    .application.theme--light {
       background: none;
     }
   }
