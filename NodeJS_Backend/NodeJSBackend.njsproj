@@ -38,6 +38,8 @@
     <Compile Include="services\BudgetManagerAPI\app\models\client.js" />
     <Compile Include="services\BudgetManagerAPI\app\models\user.js" />
     <Compile Include="services\BudgetManagerAPI\app\routes\auth.js" />
+    <Compile Include="services\BudgetManagerAPI\app\routes\budget.js" />
+    <Compile Include="services\BudgetManagerAPI\app\routes\client.js" />
     <Compile Include="services\BudgetManagerAPI\app\routes\user.js" />
     <Compile Include="services\BudgetManagerAPI\app\setup\index.js" />
     <Compile Include="services\BudgetManagerAPI\config\app.js" />
