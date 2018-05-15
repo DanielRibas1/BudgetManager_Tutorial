@@ -35,7 +35,7 @@
                       color="light-blue lighten-1">
         </v-text-field>
 
-        <v-text-filed label="Password"
+        <v-text-field label="Password"
                       v-model="newUser.password"
                       prepend-icon="lock"
                       :rules="rules"
@@ -44,13 +44,13 @@
                       :type="signUpPasswordVisible ? 'text' : 'password'"
                       color="light-blue lighten-1"
                       required>
-        </v-text-filed>
+        </v-text-field>
 
         <v-btn block color="light-blue lighten-1" @click.native="submitSignUp()">SignUp</v-btn>
       </v-form>
     </div>
 
-    <v-snackbar timeout="6000"
+    <v-snackbar :timeout="timeout"
                 bottom="bottom"
                 color="red lighten-1"
                 v-model="snackbar">
@@ -65,6 +65,7 @@ export default {
   data () {
     return {
       snackbar: false,
+      timeout: 6000,
       validLogin: false,
       validSignUp: false,
       signUpVisible: false,
@@ -75,16 +76,19 @@ export default {
         username: '',
         password: ''
       },
+      newUser: {
+        username: '',
+        password: ''
+      },
       message: ''
     }
   },
   methods: {
     submitAuthentication () {
-      Authentication.authenticate(this, this.credentials, '/')
+      Authentication.authenticate(this, this.credentials, '/Home')
     },
-
     submitSignUp () {
-      Authentication.signup(this, this.newUser, '/')
+      Authentication.signup(this, this.newUser, '/Home')
     }
   }
 }

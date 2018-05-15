@@ -1,5 +1,4 @@
 import Axios from 'axios'
-import router from '@/router'
 
 const BudgetManagerAPI = `http://${window.location.hostname}:3001`
 
@@ -13,9 +12,9 @@ export default {
         context.$cookie.set('user_id', data.user, '1D')
         context.validLogin = true
 
-        this.user.authenticate = true
+        this.user.authenticated = true
 
-        if (redirect) router.push(redirect)
+        if (redirect) context.$router.push(redirect)
       }).catch(({ response: { data } }) => {
         context.snackbar = true
         context.message = data.message
@@ -38,7 +37,7 @@ export default {
     context.$cookie.delete('user_id')
     this.user.authenticated = false
 
-    if (redirect) router.push(redirect)
+    if (redirect) context.$router.push(redirect)
   },
 
   checkAuthentication () {

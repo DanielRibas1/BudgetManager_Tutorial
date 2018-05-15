@@ -1,25 +1,29 @@
 <template>
   <header class="l-header-container">
-    <v-layout row wrap>
+    <v-layout row wrap :class="budgetsVisible ? 'l-budgets-header' : 'l-clients-header'">
       <v-flex xs12 md5>
-        <v-text-field v-model="search"
+        <v-text-field v-model="searchValue"
                       label="Search"
                       append-icon="search"
-                      color="light-blue lighten-1">
+                      :color="budgetsVisible ? 'light-blue lighten-1' : 'green lighten-1'">
         </v-text-field>
       </v-flex>
 
       <v-flex xs12 offset-md1 md1>
-        <v-btn block color="light-blue lighten-1">Clients</v-btn>
+        <v-btn block
+               :color="budgetsVisible ? 'light-blue lighten-1' : 'green lighten-1'"
+               @click.native="$emit('toggleVisibleData')">
+               {{ budgetsVisible ? "Clients" : "Budgets" }}
+        </v-btn>
       </v-flex>
 
       <v-flex xs12 offset-md1 md2>
-        <x-select label="Status"
-                  color="light-blue lighten-1"
+        <v-select label="Status"
+                  :color="budgetsVisible ? 'light-blue lighten-1' : 'green lighten-1'"
                   v-model="status"
                   :items="statusItems"
                   single-line>
-        </x-select>
+        </v-select>
       </v-flex>
 
       <v-flex xs12 offset-md1 md1>
@@ -32,17 +36,26 @@
 <script>
 import Authentication from '@/components/pages/Authentication'
 export default {
+  props: ['budgetsVisible', 'search'],
   data () {
     return {
-      search: '',
+      searchValue: '',
       status: '',
       statusItems: [
-        'All', 'Approved', 'Denied', 'Waiting', 'Writing', 'Editing'
+        'all', 'approved', 'denied', 'waiting', 'writing', 'editing'
       ]
     }
   },
+  watch: {
+    'searchValue': function () {
+      this.$emit('input', this.searchValue)
+    }
+  },
+  created () {
+    this.searchValue = this.search
+  },
   methods: {
-    submitSignOut () {
+    submitSignout () {
       Authentication.signout(this, '/login')
     }
   }
@@ -50,16 +63,24 @@ export default {
 </script>
 
 <style lang="scss">
-  @import "../assets/styles";
+  @import "./../assets/styles";
 
   .l-header-container {
     background-color: $background-color;
-    margin: 0 auto ;
+    margin: 0 auto;
     padding: 0 15px;
     min-width: 272px;
 
-    label, input, .icon, .input-group__selections__comma {
-      color: #29b6f6!important;
+    .l-budgets-header {
+      label, input, .icon, .input-group__selections__comma {
+        color: #29b6f6!important;
+      }
+    }
+
+    .l-clients-header {
+      label, input, .icon, .input-group__selections__comma {
+        color: #66bb6a!important;
+      }
     }
 
     .input-group__details {
@@ -71,5 +92,9 @@ export default {
     .btn {
       margin-top: 15px;
     }
+  }
+
+  .list__tile__title, .input-group__selections {
+    text-transform: uppercase !important;
   }
 </style>
