@@ -1,8 +1,8 @@
 const passport = require('passport'),
     config = require('@config'),
-    models = require('@BudgetManager/app/setup')
+    models = require('@BudgetManager/app/setup');
 
-models.exports = (app) => {
+module.exports = (app) => {
     const api = app.BudgetManagerAPI.app.api.client;
 
     app.route('/api/v1/client')

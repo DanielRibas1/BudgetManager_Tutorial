@@ -15,8 +15,8 @@ api.store = (User, Budget, Client, Token) => (req, res) => {
                     client: client.name,
                     state: req.body.state,
                     title: req.body.title,
-                    total_price: req.body.total_price.
-                        item: req.body.items
+                    total_price: req.body.total_price,
+                    item: req.body.items
                 });
 
                 budget.save(error => {
