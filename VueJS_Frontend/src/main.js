@@ -11,7 +11,7 @@ import router from './router/router'
 
 // Components
 import Header from './components/Header'
-import BudgetList from './components/Budget/BudgetList'
+import List from './components/List/List'
 
 // Styles
 import('../node_modules/vuetify/dist/vuetify.min.css')
@@ -22,7 +22,8 @@ Vue.use(Vuetify)
 
 // Register Components
 Vue.component('app-header', Header)
-Vue.component('budget-list', BudgetList)
+Vue.component('list', List)
+
 Vue.config.productionTip = false
 
 Authentication.checkAuthentication()

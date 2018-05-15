@@ -1,7 +1,7 @@
 import Home from '../components/pages/Home.vue'
 import Authentication from '../components/pages/Authentication/Authentication'
 import Header from '../components/Header'
-import BudgetList from '../components/Budget/BudgetList'
+import List from '../components/List/List'
 
 export default [
   {
@@ -11,11 +11,10 @@ export default [
   {
     path: '/Home',
     name: 'Home',
-    component: Home,
-    header: Header,
-    BudgetList: BudgetList,
-    meta: {
-      requiredAuth: true
+    components: {
+      default: Home,
+      header: Header,
+      list: List
     }
   },
   {
