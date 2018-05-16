@@ -12,6 +12,7 @@ import router from './router/router'
 // Components
 import Header from './components/Header'
 import List from './components/List/List'
+import Create from './components/pages/Create'
 
 // Styles
 import('../node_modules/vuetify/dist/vuetify.min.css')
@@ -23,6 +24,7 @@ Vue.use(Vuetify)
 // Register Components
 Vue.component('app-header', Header)
 Vue.component('list', List)
+Vue.component('create', Create)
 
 Vue.config.productionTip = false
 

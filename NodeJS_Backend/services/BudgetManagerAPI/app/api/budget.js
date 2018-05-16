@@ -15,6 +15,7 @@ api.store = (User, Budget, Client, Token) => (req, res) => {
                     client: client.name,
                     state: req.body.state,
                     title: req.body.title,
+                    description: req.body.description,
                     total_price: req.body.total_price,
                     item: req.body.items
                 });
@@ -48,6 +49,68 @@ api.getAllFromClient = (User, Budget, Token) => (req, res) => {
             return true;
         })
     } else return res.state(403).send({ success: false, message: 'Unauthorized' });
+}
+
+api.index = (User, Budget, Client, Token) => (req, res) => {
+    if (Token) {
+        User.findOne({ _id: req.query.user_id }, (error, user) => {
+            if (error) res.status(400).json(error);
+
+            if (user) {
+                Budget.findOne({ _id: req.query._id }, (error, budget) => {
+                    if (error) res.status(400).json(error);
+                    res.status(200).json(budget);
+                })
+            } else {
+                res.status(400).json({ success: false, message: 'Invalid Budget'})
+            }
+        })
+
+    } else return res.state(401).send({ success: false, message: 'Unauthorized'});
+}
+
+api.edit = (User, Budget, Client, Token) => (req, res) => {
+    if (Token) {
+        User.findOne({ _id: req.query.user_id }, (error, user) => {
+            if (error) res.status(400).json(error);
+
+            if (user) {
+                Budget.findOneAndUpdate({ _id: req.body._id }, req.body, (error, budget) => {
+                    if (error) res.status(400).json(error);
+                    res.status(200).json(budget);
+                })
+            } else {
+                res.status(400).json({ success: false, message: "Invalid budget" })
+            }
+        })
+    } else return res.status(401).send({ success: false, message: 'Unauthorized'});
+}
+
+api.getByState = (User, Budget, Client, Token) => (req, res) => {
+    if (Token) {
+        User.findOne({ _id: req.query.user_id }, (error, user) => {
+            if (error) res.status(400).json(error);
+
+            if (user) {
+                Budget.find({ state: req.query.state }, (error, budget) => {
+                    console.log(budget)
+                    if (error) res.status(400).json(error);
+                    res.status(200).json(budget);
+                })
+            } else {
+                res.status(400).json({ success: false, message: 'Unauthorized' });
+            }
+        })
+    } else return res.status(401).send({ success: false, message: 'Unauthorized' });
+}
+
+api.remove = (User, Budget, Client, Token) => (req, res) => {
+    if (Token) {
+        Budget.remove({ _id: req.query._id }, (error, removed) => {
+            if (error) res.status(400).json(error);
+            res.status(200).json({ success: true, message: 'Removed successfully' });
+        })
+    } else return res.status(401).send({ success: false, message: 'Unauthorized' });
 }
 
 module.exports = api;
