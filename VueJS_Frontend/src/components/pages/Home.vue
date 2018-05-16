@@ -64,7 +64,8 @@
                   dark
                   small
                   fab
-                  slot="activator">
+                  slot="activator"
+                  @click.native="budgetCreation = true; listPage = false; editPage = false; createPage = true">
                   <v-icon>assignment</v-icon>
             </v-btn>
             <span>Add new Budget</span>
@@ -75,7 +76,8 @@
                   dark
                   small
                   fab
-                  slot="activator">
+                  slot="activator"
+                  @click.native="budgetCreation = false; listPage = false; editPage = false; createPage = true">
                   <v-icon>account_circle</v-icon>
             </v-btn>
             <span>Add new Client</span>
@@ -152,7 +154,7 @@ export default {
     this.getAllClients()
     this.hidden = false
   },
-  watched: {
+  watch: {
     search: function () {
       if (this.search !== null || this.search !== '') {
         const searchTerm = this.search

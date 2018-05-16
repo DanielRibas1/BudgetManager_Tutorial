@@ -11,6 +11,11 @@ const Schema = mongoose.Schema({
         required: true
     },
 
+    phone: {
+        type: String,
+        required: true
+    },
+
     user_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
