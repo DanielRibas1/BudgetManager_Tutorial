@@ -1,16 +1,14 @@
 const mongoose = require('mongoose'),
     jwt = require('jsonwebtoken'),
-    config = require('@config');
+    config = require('@config'),
+    utils = require('./utils');
 
 const api = {};
 
 api.login = (User) => (req, res) => {
     User.findOne({ username: req.body.username }, (error, user) => {
         if (error) throw error;
-
-        if (!user)
-            res.status(401).send({ success: false, message: 'Authentication failed. User not found.' });
-        else {
+        if (utils.checkEntity(user, 'Authentication failed. User not found.')) {
             user.comparePassword(req.body.password, (error, matches) => {
                 if (matches && !error) {
                     const token = jwt.sign({ user }, config.secret);
@@ -20,7 +18,7 @@ api.login = (User) => (req, res) => {
                 }
             });
         }
-    });
+    })
 }
 
 api.verify = (headers) => {
